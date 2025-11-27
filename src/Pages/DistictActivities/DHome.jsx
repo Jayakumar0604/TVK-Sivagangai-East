@@ -15,7 +15,7 @@ const fadeRight = {
 const DHome = () => {
   return (
     <section className="bg-[#FFDD00] min-h-screen w-full text-black px-6 py-12 noto-sans-semi overflow-hidden flex items-center">
-      <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+      <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-10 items-center">
         
         {/* Left: Tamil Text */}
         <motion.div

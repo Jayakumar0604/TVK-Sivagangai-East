@@ -10,7 +10,7 @@ import Rajmohan from "../../assets/tvk-raj-mohan.jpg";
 const members = [
   {
     name: "திரு. வெங்கட், M.Com., MBA., M.L",
-    role: "கழக பொருளாளர்", // Corrected spelling from பொறுளாளர் to பொருளாளர்
+    role: "கழக பொருளாளர்",
     image: Venkat,
     highlight: "நிர்வாகம்",
   },
@@ -75,7 +75,12 @@ const TVKFinanceTeam = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="relative z-10 mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-10"
+          /* FIXED GRID LAYOUT:
+             - grid-cols-1: Default for Mobile AND Tablet (md).
+             - lg:grid-cols-3: Switches to 3 columns only on Laptop/Desktop.
+             This fixes the squished look on tablets.
+          */
+          className="relative z-10 mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-10"
         >
           {members.map((member, index) => (
             <motion.div
@@ -113,7 +118,7 @@ const TVKFinanceTeam = () => {
                 
                 <div className="w-16 h-1 bg-[#FFDD00] mx-auto rounded-full"></div>
 
-                <p className="text-sm md:text-base text-[#3D3D3D] font-medium opacity-90">
+                <p className="text-sm md:text-base text-[#3D3D3D] noto-sans-medium opacity-90">
                   {member.role}
                 </p>
               </div>

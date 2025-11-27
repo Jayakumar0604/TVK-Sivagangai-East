@@ -49,7 +49,7 @@ const TvkBussy = () => {
              <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:20px_20px]"></div>
              
              <h2 className="text-lg md:text-2xl noto-sans-bold text-white uppercase tracking-wider relative z-10">
-                மதிப்பிற்குரிய பொதுச்செயலாளர்
+               மதிப்பிற்குரிய பொதுச்செயலாளர்
              </h2>
         </div>
       </motion.div>
@@ -62,7 +62,12 @@ const TvkBussy = () => {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-tr-full opacity-40 blur-2xl pointer-events-none"></div>
 
         <div className="mx-auto max-w-6xl relative z-10">
-          <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+          
+          {/* FIXED GRID LAYOUT:
+             1. grid-cols-1: Mobile & Tablet (md) will show 1 column (Stacked).
+             2. lg:grid-cols-12: Only Laptops/Desktops will show side-by-side (12 columns).
+          */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
             {/* --- Left Column: Image & Designation --- */}
             <motion.div 
@@ -70,7 +75,7 @@ const TvkBussy = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="md:col-span-5 relative mb-12 md:mb-0" // Added mb-12 for mobile spacing
+              className="lg:col-span-5 relative mb-12 lg:mb-0" // mb-12 provides spacing when stacked
             >
               <div className="relative group">
                 {/* Image Frame */}
@@ -82,7 +87,7 @@ const TvkBussy = () => {
                   />
                 </div>
 
-                {/* Floating Name Card - Adjusted position for spacing */}
+                {/* Floating Name Card */}
                 <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-[90%] bg-white p-4 rounded-lg shadow-xl border-l-4 border-[#990500] text-center z-20">
                    <h3 className="text-[#990500] noto-sans-bold text-lg leading-tight">திரு. Bussy N. ஆனந்த்</h3>
                    <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mt-1">முன்னாள் MLA & பொதுச்செயலாளர்</p>
@@ -96,7 +101,7 @@ const TvkBussy = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="md:col-span-7 space-y-5" // Reduced space-y slightly for better flow
+              className="lg:col-span-7 space-y-5"
             >
               
               {/* Block 1: Intro & Coordination */}

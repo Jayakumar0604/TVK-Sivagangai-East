@@ -37,13 +37,13 @@ const imageVariants = {
 
 const SmallAbout = () => {
   return (
-    <section className="relative bg-[#FFDD00] text-[#3D3D3D] py-16 md:py-24 overflow-hidden noto-sans-semi">
+    <section className="relative bg-[#FFDD00] text-[#3D3D3D] py-12 sm:py-16 lg:py-24 overflow-hidden noto-sans-semi">
       
       {/* --- Background Decorative Elements (Palette Colors) --- */}
       <div className="absolute top-[-10%] left-[-5%] w-64 h-64 bg-[#990500] rounded-full mix-blend-multiply opacity-5 blur-3xl"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-white rounded-full opacity-40 blur-3xl"></div>
 
-      <div className="mx-auto max-w-6xl px-6 relative z-10">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
         
         {/* --- Section Header (District Focus) --- */}
         <motion.div 
@@ -60,7 +60,7 @@ const SmallAbout = () => {
            </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           
           {/* --- Left: Text Content --- */}
           <motion.div 
@@ -82,14 +82,15 @@ const SmallAbout = () => {
               </span>
             </motion.h1>
 
-            <motion.p variants={textVariants} className="text-base md:text-lg text-[#3D3D3D] leading-relaxed text-justify">
+            {/* FIXED: Changed text-justify to text-left */}
+            <motion.p variants={textVariants} className="text-base md:text-lg text-[#3D3D3D] leading-relaxed text-left">
               தமிழக வெற்றிக் கழகம், அனைவரையும் உள்ளடக்கிய ஓர் உன்னதமான 
               <span className="noto-sans-bold text-[#990500]"> சிவகங்கை கிழக்கு மாவட்டத்தை </span> 
               உருவாக்க உறுதிபூண்டுள்ளது. இளைஞர் மேம்பாடு, தொழில்நுட்ப வளர்ச்சி மற்றும் சமூக நீதி ஆகியவையே எங்கள் பார்வையின் அடிப்படை.
             </motion.p>
 
             <motion.div variants={textVariants} className="bg-white/50 border-l-4 border-[#990500] p-4 rounded-r-md">
-                <p className="text-sm md:text-base italic font-medium">
+                <p className="text-sm md:text-base italic noto-sans-medium">
                     "வெளிப்படையான நிர்வாகம் மற்றும் சாமானிய மக்களும் பயன்பெறும் வகையிலான கொள்கைகளை நாங்கள் உறுதியாக நம்புகிறோம்."
                 </p>
             </motion.div>

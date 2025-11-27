@@ -8,7 +8,7 @@ import {
   TrendingUp, 
   MapPin, 
   Target,
-  ArrowLeft // Added ArrowLeft for Back Button
+  ArrowLeft 
 } from "lucide-react";
 
 // Replace with your screenshot image
@@ -155,15 +155,16 @@ const DistrictPageIntro = () => {
           </motion.div>
 
           {/* Text Side */}
-          <motion.div variants={cardVariants} className="space-y-6 text-justify">
+          {/* FIXED: Changed text-justify to text-left */}
+          <motion.div variants={cardVariants} className="space-y-6 text-left">
              <div className="flex items-center gap-2 mb-2">
                 <Target className="text-[#990500]" />
                 <h3 className="text-xl font-bold text-[#990500]">எங்கள் நோக்கம்</h3>
              </div>
-             <p className="text-base md:text-lg leading-relaxed text-gray-800 font-medium">
+             <p className="text-base md:text-lg leading-relaxed text-gray-800 noto-sans-medium">
                தமிழக வெற்றிக் கழகம் (TVK) தமிழ்நாட்டின் ஒவ்வொரு மாவட்டத்திலும் மக்கள் நலனுக்காக பல்வேறு செயல்பாடுகளை முன்னெடுத்து வருகிறது. நமது கட்சியின் ஒவ்வொரு மாவட்டக் குழுவும், மாவட்டத்தின் தனித்துவமான தேவைகளுக்கு ஏற்ப சமூக முன்னேற்ற திட்டங்களை செயல்படுத்தி வருகிறது.
              </p>
-             <p className="text-base md:text-lg leading-relaxed text-gray-800 font-medium">
+             <p className="text-base md:text-lg leading-relaxed text-gray-800 noto-sans-medium">
                மாவட்ட அளவிலான பணிகள் மூலம், நாங்கள் தமிழகத்தின் ஆழம் வரை சமூக நீதியும், சமத்துவமும் கொண்ட செயல்பாடுகளை முன்னெடுத்து வருகிறோம்.
              </p>
           </motion.div>

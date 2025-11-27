@@ -14,8 +14,8 @@ const fadeRight = {
 
 const VHome = () => {
   return (
-    <section className="bg-[#FFDD00] text-black px-6 py-12 noto-sans-semi overflow-hidden">
-      <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+    <section className="bg-[#FFDD00] text-black px-4 sm:px-6 py-10 sm:py-12 noto-sans-semi overflow-hidden">
+      <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-8 md:gap-10 items-center">
         {/* Left: Tamil Text */}
         <motion.div
           initial="hidden"

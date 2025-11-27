@@ -54,8 +54,8 @@ const Home = () => {
 
       {/* --- Hero Text Content --- */}
       {/* Added negative margin (-mt) to pull text up over the gradient slightly */}
-      <div className="bg-[#FFDD00] relative z-10 -mt-12 md:-mt-24">
-        <section className="px-6 pb-16 pt-8 md:pt-12">
+      <div className="bg-[#FFDD00] relative z-10 -mt-10 sm:-mt-12 md:-mt-20">
+        <section className="px-4 sm:px-6 pb-12 sm:pb-16 pt-8 md:pt-12">
           
           {/* Background Decor */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#990500] rounded-full mix-blend-multiply opacity-5 blur-3xl pointer-events-none"></div>
@@ -85,7 +85,7 @@ const Home = () => {
             </motion.h1>
 
             {/* Subtext */}
-            <motion.p variants={itemVariants} className="text-base md:text-lg text-[#3D3D3D] max-w-2xl mx-auto font-medium leading-relaxed opacity-90">
+            <motion.p variants={itemVariants} className="text-base md:text-lg text-[#3D3D3D] max-w-2xl mx-auto noto-sans-medium leading-relaxed opacity-90">
               <span className="font-bold text-[#990500]">சிவகங்கை கிழக்கு மாவட்ட</span> மக்கள் அனைவரின் வாழ்விலும் 
               முற்போக்கான மாற்றத்தையும், வளமான எதிர்காலத்தையும் உருவாக்க ஒன்றிணைவோம்!
             </motion.p>
@@ -119,7 +119,7 @@ const Home = () => {
       </div>
 
       {/* --- Swiper Section --- */}
-      <div className="bg-[#FFDD00] pb-12">
+      <div className="bg-[#FFDD00] px-4 sm:px-6 pb-10 sm:pb-12">
         <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

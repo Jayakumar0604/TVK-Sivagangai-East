@@ -56,7 +56,7 @@ const TvkSong = () => {
       </motion.div>
 
       {/* --- Main Section --- */}
-      <section className="relative bg-[#FFDD00] py-16 px-6 overflow-hidden min-h-[60vh] flex flex-col items-center justify-center">
+      <section className="relative bg-[#FFDD00] py-12 sm:py-16 px-4 sm:px-6 overflow-hidden min-h-[50vh] md:min-h-[60vh] flex flex-col items-center justify-center">
         
         {/* Background Decor (Strictly Palette Colors) */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-[#990500] rounded-full mix-blend-multiply opacity-5 blur-xl animate-bounce duration-[3000ms]"></div>
@@ -129,7 +129,7 @@ const TvkSong = () => {
                     </div>
                     
                     {/* Bottom Label */}
-                    <div className="absolute bottom-4 left-4 bg-[#990500]/90 text-white px-3 py-1 rounded text-sm font-medium backdrop-blur-sm">
+                    <div className="absolute bottom-4 left-4 bg-[#990500]/90 text-white px-3 py-1 rounded text-sm noto-sans-medium backdrop-blur-sm">
                       இப்பொழுதே பாருங்கள்
                     </div>
                   </motion.div>

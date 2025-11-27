@@ -1,13 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: #fff;
+  color: #111;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
 
 .noto-sans-regular {
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
 .noto-sans-medium {
@@ -15,8 +44,7 @@
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
 .noto-sans-semi {
@@ -24,8 +52,7 @@
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
 .noto-sans-bold {
@@ -33,10 +60,5 @@
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
-*{
-  font-family: "noto-sans-regular", sans-serif;
+  font-variation-settings: "wdth" 100;
 }

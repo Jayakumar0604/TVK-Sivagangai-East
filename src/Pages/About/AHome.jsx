@@ -15,7 +15,7 @@ const fadeRight = {
 const AHome = () => {
   return (
     <section className="bg-[#FFDD00] min-h-screen w-full text-black px-6 py-12 noto-sans-semi overflow-hidden flex items-center">
-      <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+      <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-10 items-center">
         
         {/* Left: Tamil Text */}
         <motion.div
@@ -29,7 +29,8 @@ const AHome = () => {
             எங்களைப் பற்றி
           </h1>
           
-          <p className="text-sm md:text-base text-[#3D3D3D] leading-relaxed text-justify">
+          {/* FIXED: Changed text-justify to text-left */}
+          <p className="text-sm md:text-base text-[#3D3D3D] leading-relaxed text-left">
             தமிழக வெற்றிக் கழகம், சாதி, மத, பாலின வேறுபாடுகளற்ற 
             <span className="text-[#990500] noto-sans-bold"> சமத்துவ சமுதாயத்தை </span> 
             படைக்க உறுதி பூண்டுள்ளது. அரசியல் என்பது ஒரு தொழில் அல்ல, அது ஒரு 

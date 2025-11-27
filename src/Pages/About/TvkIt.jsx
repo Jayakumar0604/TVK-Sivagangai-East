@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Emblem from "../../assets/tvk-emblem.webp"; // Ensure path is correct
+import Emblem from "../../assets/tvk-emblem.webp"; 
 import { AlertCircle, Star, MapPin } from "lucide-react"; 
 
 // --- Animations ---
@@ -64,7 +64,7 @@ const TvkIt = () => {
       </motion.div>
 
       {/* --- Main Content Section --- */}
-      <section className="relative bg-[#FFDD00] text-[#3D3D3D] px-6 py-16 noto-sans-semi overflow-hidden min-h-[80vh] flex items-center justify-center">
+      <section className="relative bg-[#FFDD00] text-[#3D3D3D] px-4 py-12 md:px-6 md:py-16 noto-sans-semi overflow-hidden min-h-[80vh] flex items-center justify-center">
         
         {/* Abstract Background Shapes */}
         <div className="absolute top-[-10%] left-[-10%] w-64 h-64 bg-[#990500] rounded-full opacity-10 blur-3xl" />
@@ -75,7 +75,7 @@ const TvkIt = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="relative z-10 mx-auto max-w-6xl grid md:grid-cols-2 gap-12 items-center"
+          className="relative z-10 mx-auto max-w-6xl grid lg:grid-cols-2 gap-12 items-center"
         >
           
           {/* --- Left Column: Visuals & Slogan --- */}
@@ -105,7 +105,7 @@ const TvkIt = () => {
                 <Star className="fill-current w-6 h-6 mx-1" />
                 <Star className="fill-current w-6 h-6" />
               </div>
-              <p className="text-base md:text-lg text-[#3D3D3D] leading-relaxed font-medium">
+              <p className="text-base md:text-lg text-[#3D3D3D] leading-relaxed noto-sans-medium">
                 "மக்கள் சேவையில் மாவீரன்! களத்தில் இணையில்லா தலைவன்!
                 <br />
                 நாளை முதல்வராகும் லட்சியப் பயணம்..."
@@ -133,13 +133,16 @@ const TvkIt = () => {
                 </h3>
               </div>
               
-              <p className="text-base md:text-lg leading-loose text-gray-800 text-justify">
+              {/* FIXED: Changed text-justify to text-left */}
+              <p className="text-base md:text-lg leading-loose text-gray-800 text-left">
                 இந்த இணையதளம் <span className="font-bold text-[#990500]">சிவகங்கை கிழக்கு மாவட்ட</span> (Sivagangai East)
                 தமிழக வெற்றிக் கழகத் தொண்டர்களுக்காகப் பிரத்யேகமாக உருவாக்கப்பட்டுள்ளது.
                 எங்கள் மாவட்டத்தில் நடைபெறும் மக்கள் நலப்பணிகள், உறுப்பினர் சேர்க்கை முகாம்கள் 
                 மற்றும் கழக நிகழ்வுகளை ஒருங்கிணைக்க இது செயல்படுகிறது.
               </p>
-              <p className="text-base md:text-lg leading-loose text-gray-800 text-justify">
+              
+              {/* FIXED: Changed text-justify to text-left */}
+              <p className="text-base md:text-lg leading-loose text-gray-800 text-left">
                 சிவகங்கை மண்ணின் மக்களின் குரலாகவும், தளபதி அவர்களின் கொள்கைகளை 
                 வீடுதோறும் கொண்டு சேர்க்கும் பாலமாகவும் நாங்கள் செயல்படுகிறோம்.
               </p>
@@ -162,7 +165,7 @@ const TvkIt = () => {
                   <strong className="block mb-2 text-lg noto-sans-bold text-[#FFDD00] tracking-wide">
                     முக்கிய அறிவிப்பு:
                   </strong>
-                  <p className="text-sm md:text-base opacity-90 leading-relaxed">
+                  <p className="text-sm md:text-base opacity-90 leading-relaxed text-left">
                     இது சிவகங்கை கிழக்கு மாவட்டத் தொண்டர்களால் நிர்வகிக்கப்படும் 
                     <span className="font-bold border-b border-[#FFDD00] ml-1">ஆதரவு இணையதளம்</span> மட்டுமே. 
                     அதிகாரப்பூர்வ அறிவிப்புகளுக்கு தலைமைக் கழகத்தின் பக்கத்தைப் பார்க்கவும்.

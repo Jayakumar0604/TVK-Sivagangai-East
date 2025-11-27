@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Globe, Twitter, CheckCircle, Quote } from "lucide-react"; 
-import AadhavImage from "../../assets/aadhav-arjuna-tvk-.webp"; // Ensure path is correct
+import AadhavImage from "../../assets/aadhav-arjuna-tvk-.webp"; 
 
 // --- Animation Variants ---
 const containerVariants = {
@@ -46,7 +46,7 @@ const AadhavArjunaProfile = () => {
         <div className="bg-[#990500] py-6 text-center shadow-lg relative overflow-hidden">
              <div className="absolute inset-0 opacity-10 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.1)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]"></div>
              <h1 className="text-xl md:text-3xl noto-sans-bold text-white uppercase tracking-wider relative z-10">
-                தேர்தல் பிரச்சார மேலாண்மை
+               தேர்தல் பிரச்சார மேலாண்மை
              </h1>
         </div>
       </motion.div>
@@ -89,7 +89,7 @@ const AadhavArjunaProfile = () => {
                   <span className="text-sm font-bold bg-[#FFDD00] text-[#990500] px-2 py-1 rounded inline-block mb-4">
                     B.A. (Political Science)
                   </span>
-                  <p className="text-lg md:text-xl font-medium text-gray-800 border-b-2 border-gray-100 pb-4">
+                  <p className="text-lg md:text-xl noto-sans-medium text-gray-800 border-b-2 border-gray-100 pb-4">
                     பொதுச்செயலாளர் - தேர்தல் பிரச்சார மேலாண்மை <br/>
                     <span className="text-sm text-gray-500 font-normal">தமிழக வெற்றிக் கழகம் (TVK)</span>
                   </p>
@@ -117,12 +117,16 @@ const AadhavArjunaProfile = () => {
                 <span className="bg-[#990500] w-2 h-2 rounded-full"></span>
                 துறைசார் அனுபவம்
               </h3>
-              <p className="text-sm md:text-base leading-relaxed text-justify mb-4">
+              
+              {/* FIXED: Changed text-justify to text-left */}
+              <p className="text-sm md:text-base leading-relaxed text-left mb-4">
                 தமிழக அரசியல் மற்றும் தகவல் தொழில்நுட்ப துறையில் நன்கு அனுபவம் பெற்ற
                 <span className="noto-sans-bold text-[#990500]"> திரு. CTR. நிர்மல் குமார் B.E., LL.B.</span> அவர்கள்,
                 தமிழக வெற்றிக் கழகத்தில் இணைந்து, தகவல் தொழில்நுட்பம் மற்றும் சமூக ஊடகப் பிரிவு பொறுப்பை ஏற்றுள்ளார்.
               </p>
-              <p className="text-sm md:text-base leading-relaxed text-justify">
+              
+              {/* FIXED: Changed text-justify to text-left */}
+              <p className="text-sm md:text-base leading-relaxed text-left">
                 இவரது தலைமையில் <span className="noto-sans-bold text-[#990500]"> TVK IT Wing</span> ஒரு முன்னோடியான, 
                 தொழில்நுட்பம் நிரம்பிய தளமாக உருவாக்கப்பட்டுள்ளது.
               </p>
@@ -151,7 +155,7 @@ const AadhavArjunaProfile = () => {
               {/* Quote Box */}
               <div className="bg-[#990500] text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
                 <Quote className="absolute top-2 right-2 text-[#FFDD00] w-10 h-10 opacity-20" />
-                <p className="italic text-base md:text-lg font-medium leading-relaxed relative z-10">
+                <p className="italic text-base md:text-lg noto-sans-medium leading-relaxed relative z-10">
                   “அரசியலில் தொழில்நுட்பம் ஒரு கருவி, அதை நம் மக்கள் நன்றாக பயன்படுத்த வேண்டும்!”
                 </p>
                 <p className="text-right text-[#FFDD00] text-sm font-bold mt-2 uppercase tracking-wide">

@@ -61,8 +61,8 @@ const StatCard = ({ icon, label, target, suffix }) => {
 
 const TVKStats = () => {
   return (
-    <section className="bg-yellow-400 py-12 px-6 noto-sans-semi">
-      <div className="mx-auto max-w-6xl grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <section className="bg-yellow-400 py-10 sm:py-12 px-4 sm:px-6 noto-sans-semi">
+      <div className="mx-auto max-w-6xl grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {stats.map((stat, index) => (
           <StatCard key={index} {...stat} />
         ))}
