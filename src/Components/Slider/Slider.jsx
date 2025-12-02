@@ -44,7 +44,7 @@ const Slider = () => {
 
   return (
     <div className="bg-[#FFDD00] relative z-10 -mt-10 sm:-mt-12 md:-mt-20 overflow-hidden">
-      <section className="px-4 sm:px-6 pb-12 sm:pb-16 pt-8 md:pt-12">
+      <section className="px-0 sm:px-6 pb-12 sm:pb-16 pt-8 md:pt-12">
         
         {/* Background Decor */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#990500] rounded-full mix-blend-multiply opacity-5 blur-3xl pointer-events-none"></div>
@@ -83,13 +83,13 @@ const Slider = () => {
                  index < images.length - 3 && (
                   <SwiperSlide key={index}>
                     {/* Mobile View (1 image) */}
-                    <div className="flex gap-2 justify-center md:hidden px-8">
+                    <div className="flex gap-2 justify-center md:hidden px-">
                       {images.slice(index, index + 1).map((img, i) => (
                         <img
                           key={i}
                           src={img}
                           alt={`slide mobile ${index + i}`}
-                          className="w-full h-48 object-cover rounded-lg shadow-lg border-2 border-white"
+                          className="w-full h-68 object-cover shadow-lg "
                         />
                       ))}
                     </div>
@@ -133,10 +133,10 @@ const Slider = () => {
           {/* 5. Action Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row justify-center gap-4 pt-4"
+            className="flex flex-col sm:flex-row justify-center gap-4 pt-4 px-8 md:px-0"
           >
             {/* Join Button */}
-            <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
+            <motion.div  variants={buttonVariants} whileHover="hover" whileTap="tap">
               <Link
                 to="/join"
                 className="flex items-center justify-center gap-2 rounded-full text-white px-6 py-3 text-sm md:text-base noto-sans-bold bg-[#990500] shadow-xl hover:shadow-2xl hover:bg-[#7a0400] transition-all"
