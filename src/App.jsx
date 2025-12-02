@@ -8,6 +8,7 @@ import Volunteers from "./Pages/Volunteer/Index";
 import Policy from "./Pages/Policy/Index";
 import JoinFormTamil from "./Pages/Volunteer/JoinFormTamil";
 import TVKActivities from "./Pages/DistictActivities/TVKActivities";
+import Gallery from "./Components/Gallery/Index";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/policies-vision" element={<Policy />} />
           <Route path="/join" element={<JoinFormTamil />} />
           <Route path="/activities" element={<TVKActivities />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Route>
       </Routes>
     </BrowserRouter>
