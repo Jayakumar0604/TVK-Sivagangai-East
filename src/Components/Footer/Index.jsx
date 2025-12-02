@@ -1,15 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Use Link for internal navigation
+import { Link } from "react-router-dom"; 
 import { motion } from "framer-motion";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import Logo from "../../assets/TVK-logo.jpg"; // Ensure path is correct
+import Logo from "../../assets/TVK-logo.jpg"; 
 
 const quickLinks = [
   { label: "முகப்பு", href: "/" },
   { label: "எங்களைப் பற்றி", href: "/about" },
   { label: "மாவட்ட செயல்பாடுகள்", href: "/district-activities" },
-  { label: "தன்னார்வலராக சேரவும்", href: "/join" }, // Updated to /join based on previous context
+  { label: "தன்னார்வலராக சேரவும்", href: "/join" },
   { label: "கொள்கைகள் & நோக்கம்", href: "/policies-vision" },
+];
+
+// --- Social Media Links Configuration ---
+const socialMedia = [
+  { id: 1, Icon: FaFacebookF, href: "https://www.facebook.com/drtkprabhutvk" },
+  { id: 2, Icon: FaTwitter, href: "https://x.com/drtkprabhu_TVK" },
+  { id: 3, Icon: FaInstagram, href: "https://www.instagram.com/prabhuthurai/?hl=en" },
+  // { id: 4, Icon: FaYoutube, href: "#" }, // Placeholder for YouTube if needed
 ];
 
 // --- Animation Variants ---
@@ -34,7 +42,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#990500] text-white overflow-hidden font-sans border-t-8 border-[#FFDD00]">
       
-      {/* --- Background Decorative Elements (Palette Colors) --- */}
+      {/* --- Background Decorative Elements --- */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFDD00] rounded-full mix-blend-overlay opacity-5 blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-black rounded-full mix-blend-multiply opacity-20 blur-3xl -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
 
@@ -58,7 +66,7 @@ export default function Footer() {
                 />
               </div>
               <div className="text-left">
-                <h2 className="text-lg md:text-xl noto-sans-bold text-white uppercase tracking-wider leading-none">
+                <h2 className="text-md md:text-lg lg:text-xl noto-sans-bold text-white uppercase tracking-wider leading-none">
                   தமிழக வெற்றிக் கழகம்
                 </h2>
                 <p className="text-xs font-bold text-[#FFDD00] mt-1 tracking-widest uppercase">
@@ -72,11 +80,14 @@ export default function Footer() {
               அனைவரையும் அரவணைக்கும் செழிப்பான சிவகங்கையை உருவாக்குவதே எங்கள் இலக்கு.
             </p>
 
+            {/* Social Media Icons */}
             <div className="flex justify-center md:justify-start gap-4">
-              {[FaFacebookF, FaTwitter, FaInstagram, FaYoutube].map((Icon, idx) => (
+              {socialMedia.map(({ id, Icon, href }) => (
                 <motion.a
-                  key={idx}
-                  href="#"
+                  key={id}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ y: -3, scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FFDD00] hover:text-[#990500] transition-all duration-300 shadow-sm border border-white/20"
@@ -120,39 +131,47 @@ export default function Footer() {
             </h3>
             
             <ul className="space-y-4 w-full max-w-xs">
+              {/* Email */}
               <li className="flex flex-col md:flex-row items-center md:items-start gap-3">
                 <div className="bg-white/10 p-2 rounded-full shrink-0 text-[#FFDD00]">
                     <FaEnvelope />
                 </div>
                 <div>
                     <span className="block text-xs text-gray-400 font-bold uppercase mb-1">மின்னஞ்சல்</span>
-                    <a href="mailto:info@tvk.org" className="text-sm hover:text-[#FFDD00] transition-colors break-all">
-                        info@tvk.org
+                    <a href="mailto:tvkitwingsvgeast@gmail.com" className="text-sm hover:text-[#FFDD00] transition-colors break-all">
+                        tvkitwingsvgeast@gmail.com
                     </a>
                 </div>
               </li>
 
+              {/* Phone */}
               <li className="flex flex-col md:flex-row items-center md:items-start gap-3">
                 <div className="bg-white/10 p-2 rounded-full shrink-0 text-[#FFDD00]">
                     <FaPhoneAlt />
                 </div>
                 <div>
                     <span className="block text-xs text-gray-400 font-bold uppercase mb-1">தொலைபேசி</span>
-                    <a href="tel:+914565123456" className="text-sm hover:text-[#FFDD00] transition-colors">
-                        +91 4565 123456
+                    <a href="tel:+919840553968" className="text-sm hover:text-[#FFDD00] transition-colors">
+                        +91 98405 53968
                     </a>
                 </div>
               </li>
 
+              {/* Address with Link */}
               <li className="flex flex-col md:flex-row items-center md:items-start gap-3">
                 <div className="bg-white/10 p-2 rounded-full shrink-0 text-[#FFDD00]">
                     <FaMapMarkerAlt />
                 </div>
                 <div>
                     <span className="block text-xs text-gray-400 font-bold uppercase mb-1">முகவரி</span>
-                    <span className="text-sm text-gray-200">
-                        சிவகங்கை கிழக்கு மாவட்டம்,<br/> தமிழ்நாடு.
-                    </span>
+                    <a 
+                      href="https://maps.app.goo.gl/1cnqUckCiCLLkEc78" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-sm text-gray-200 hover:text-[#FFDD00] transition-colors"
+                    >
+                        தமிழக வெற்றிக் கழகம்,<br/> சிவகங்கை கிழக்கு மாவட்டம்.
+                    </a>
                 </div>
               </li>
             </ul>

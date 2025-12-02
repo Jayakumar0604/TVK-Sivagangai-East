@@ -38,7 +38,7 @@ const Header = () => {
   }, []);
 
   const Nav = [
-    { id: 1, name: <FaHome className="text-xl mb-[2px]" />, link: "/" },
+    { id: 1, name: <FaHome className="text-lg lg:text-xl mb-[2px] shrink-0" />, link: "/" },
     { id: 2, name: "எங்களைப் பற்றி", link: "/about" },
     { id: 3, name: "மாவட்ட செயல்பாடுகள்", link: "/district-activities" },
     { id: 4, name: "தன்னார்வலர்கள்", link: "/volunteer-with-us" },
@@ -57,14 +57,15 @@ const Header = () => {
             : "bg-white py-3 md:py-4 border-transparent"
         }`}
       >
-        <div className="px-5 md:px-10 max-w-7xl mx-auto flex items-center justify-between">
+        <div className="px-4 md:px-6 lg:px-8 max-w-7xl mx-auto flex items-center justify-between">
           
-          {/* --- Logo Section (Matched to Footer Style) --- */}
-          <Link to="/" className="flex items-center gap-3 group z-50" onClick={closeMenu}>
+          {/* --- Logo Section --- */}
+          <Link to="/" className="flex items-center gap-2 md:gap-3 group z-50 min-w-0" onClick={closeMenu}>
+            
             {/* Circular Logo Container */}
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className="relative h-12 w-12 md:h-14 md:w-14 shrink-0 overflow-hidden rounded-full border-2 border-[#FFDD00] p-0.5 bg-white shadow-md group-hover:shadow-lg transition-shadow"
+              className="relative h-12 lg:h-14 w-12 lg:w-14 shrink-0 overflow-hidden rounded-full border-2 border-[#FFDD00] p-0.5 bg-white shadow-md group-hover:shadow-lg transition-shadow"
             >
               <img 
                 src={Logo} 
@@ -74,25 +75,28 @@ const Header = () => {
             </motion.div>
             
             {/* Text Content */}
-            <div className="flex flex-col">
-              <span className="text-[#990500] noto-sans-bold text-lg md:text-xl leading-none uppercase tracking-wide">
-                தமிழக வெற்றிக்<br className="md:hidden" /> கழகம்
+            <div className="flex flex-col justify-center">
+              {/* FIX: Reduced lg size to text-lg to save space for menu */}
+              <span className="text-[#990500] noto-sans-bold text-sm sm:text-base md:text-lg lg:text-lg xl:text-2xl leading-none uppercase tracking-wide whitespace-nowrap">
+                தமிழக வெற்றிக் கழகம்
               </span>
-              <span className="hidden md:block text-[10px] font-bold text-[#FFDD00] tracking-widest uppercase bg-[#990500] px-1.5 py-0.5 rounded w-fit mt-1">
-                 சிவகங்கை கிழக்கு மாவட்டம்
+              <span className="text-[10px] md:text-xs font-bold text-[#FFDD00] tracking-widest uppercase bg-[#990500] px-1.5 py-0.5 rounded w-fit mt-1">
+                  சிவகங்கை கிழக்கு மாவட்டம்
               </span>
             </div>
           </Link>
 
           {/* --- Desktop Navigation --- */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          {/* FIX: Reduced gap for lg screens */}
+          <nav className="hidden lg:flex items-center gap-0 xl:gap-2 whitespace-nowrap">
             {Nav.map((item) => {
               const isActive = currentPath === item.link;
               return (
                 <Link
                   key={item.id}
                   to={item.link}
-                  className="relative px-4 py-2 rounded-full group"
+                  // FIX: Reduced horizontal padding (px-3) for lg screens
+                  className="relative px-3 xl:px-4 py-2 rounded-full group"
                 >
                   {isActive && (
                     <motion.div
@@ -101,8 +105,9 @@ const Header = () => {
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
+                  {/* FIX: Reduced text size to text-xs for lg screens, text-sm for xl */}
                   <span
-                    className={`relative z-10 text-sm font-bold transition-colors duration-200 flex items-center gap-2 ${
+                    className={`relative z-10 text-xs xl:text-sm font-bold transition-colors duration-200 flex items-center gap-2 ${
                       isActive ? "text-[#990500]" : "text-[#3D3D3D] group-hover:text-[#990500]"
                     }`}
                   >
@@ -113,12 +118,13 @@ const Header = () => {
             })}
 
             {/* CTA Button */}
-            <motion.div className="ml-4" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            {/* FIX: Made button more compact on lg screens */}
+            <motion.div className="ml-2 xl:ml-4" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/join"
-                className="flex items-center gap-2 bg-[#990500] hover:bg-[#b30600] text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-md border-2 border-[#990500] hover:border-[#FFDD00] transition-all"
+                className="flex items-center gap-2 bg-[#990500] hover:bg-[#b30600] text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-full font-bold text-xs xl:text-sm shadow-md border-2 border-[#990500] hover:border-[#FFDD00] transition-all"
               >
-                <FaHandHoldingHeart className="text-[#FFDD00] text-lg" />
+                <FaHandHoldingHeart className="text-[#FFDD00] text-base xl:text-lg" />
                 <span>இணையுங்கள்</span>
               </Link>
             </motion.div>
@@ -127,7 +133,7 @@ const Header = () => {
           {/* --- Mobile Menu Toggle --- */}
           <motion.div 
             whileTap={{ scale: 0.9 }}
-            className="lg:hidden text-4xl text-[#990500] cursor-pointer" 
+            className="lg:hidden text-3xl md:text-4xl text-[#990500] cursor-pointer ml-2 shrink-0" 
             onClick={toggleMenu}
           >
             {isOpen ? <BiX /> : <BiMenu />}
@@ -161,7 +167,7 @@ const Header = () => {
                  <img src={Logo} alt="Watermark" className="w-64 grayscale -rotate-12 translate-x-10 translate-y-10" />
               </div>
 
-              {/* Drawer Header with Circular Logo */}
+              {/* Drawer Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-gray-50/50">
                 <div className="flex items-center gap-3">
                    <div className="h-10 w-10 overflow-hidden rounded-full border border-[#FFDD00] p-0.5 bg-white">
@@ -187,7 +193,7 @@ const Header = () => {
                           : "text-[#3D3D3D] noto-sans-medium hover:bg-yellow-50 hover:text-[#990500]"
                       }`}
                     >
-                      {item.name}
+                      {item.name} 
                     </Link>
                   </motion.div>
                 ))}
@@ -214,7 +220,7 @@ const Header = () => {
         )}
       </AnimatePresence>
       
-      {/* Spacer */}
+      {/* Spacer to prevent content from hiding behind fixed header */}
       <div className="h-20 lg:h-24"></div>
     </>
   );
